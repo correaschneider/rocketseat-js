@@ -1,0 +1,107 @@
+<html>
+<head>
+	<title>Curso de JS</title>
+</head>
+<body>
+	<script>
+		/** Exericício 1 */
+		/*
+			var address = {
+				street: "Rua dos pinheiros",
+				number: 1293,
+				district: "Centro",
+				city: "São Paulo",
+				state: "SP"
+			};
+
+			function getAddress(address) {
+				return 'O usuário mora em ' + address.city + '/' + address.state + ', no bairro ' + address.district + ', na rua "' + address.street + '" com nº ' + address.number + '.';
+			}
+
+			console.log(getAddress(address));
+		*/
+
+		/** Exericício 2 */
+		/*
+			function pairs(x, y) {
+				while (x < y) {
+					if (x % 2 == 0) {
+						console.log(x);
+					}
+					
+					x++;
+				}
+			}
+
+			pairs(32, 321);
+		*/
+
+		/** Exericício 3 */
+		/*
+			function hasAbility(skills) {
+				return skills.indexOf('Javascript') !== -1;
+			}
+
+			var skills = ["Javascript", "ReactJS", "React Native"];
+			console.log(hasAbility(skills)); // true ou false
+		*/
+
+		/** Exericício 4 */
+		/*
+			function experiencia(anos) {
+				if (anos >= 0 && anos <= 1) {
+					return 'Iniciante';
+				} else if (anos > 1 && anos <= 3) {
+					return 'Intermediário';
+				} else if (anos > 3 && anos <= 6) {
+					return 'Avançado';
+				} else if (anos > 6) {
+					return 'Jedi Master';
+				} else {
+					return 'Começe o quanto antes, ainda dá tempo';
+				}
+			}
+		
+			var anosEstudo = 0;
+			console.log(anosEstudo, experiencia(anosEstudo));
+			anosEstudo = 1;
+			console.log(anosEstudo, experiencia(anosEstudo));
+			anosEstudo = 3;
+			console.log(anosEstudo, experiencia(anosEstudo));
+			anosEstudo = 4;
+			console.log(anosEstudo, experiencia(anosEstudo));
+			anosEstudo = 6;
+			console.log(anosEstudo, experiencia(anosEstudo));
+			anosEstudo = 7;
+			console.log(anosEstudo, experiencia(anosEstudo));
+			anosEstudo = -1;
+			console.log(anosEstudo, experiencia(anosEstudo));
+			// De 0-1 ano: Iniciante
+			// De 1-3 anos: Intermediário
+			// De 3-6 anos: Avançado
+			// De 7 acima: Jedi Master
+		*/
+
+		/** Exericício 5 */
+		/*
+		*/
+		var usuarios = [
+			{
+				nome: "Diego",
+				habilidades: ["Javascript", "ReactJS", "Redux"]
+			},
+			{
+				nome: "Gabriel",
+				habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+			}
+		];
+
+		function abilities(usuario) {
+			return 'O ' + usuario.nome + ' possui as habilidades: ' + usuario.habilidades.join(', ');
+		}
+
+		console.log(usuarios[0], abilities(usuarios[0]));
+		console.log(usuarios[1], abilities(usuarios[1]));
+	</script>
+</body>
+</html>
