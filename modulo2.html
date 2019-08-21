@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>Curso de JS</title>
+</head>
+<body>
+    <div id="exBox">
+        <button id="newBox">Novo</button>
+
+        <div id="container" style="margin-top: 5px;"></div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div id="exList">
+        <input type="text" name="name">
+        <button onClick="add()">Adicionar</button>
+
+        <ul id="list"></ul>
+    </div>
+
+    <script>
+        /** Exericício 1 */
+        /*
+        */
+        var exBox_newBox = document.querySelector('#exBox #newBox');
+        exBox_newBox.onclick = function () {
+            var exBox_container = document.querySelector('#exBox #container');
+
+            var exBox_box = document.createElement('div');
+            exBox_box.style.cssFloat = 'left';
+            exBox_box.style.width = '100px';
+            exBox_box.style.height = '100px';
+            exBox_box.style.backgroundColor = '#f00';
+            exBox_box.style.marginRight = '2px';
+            exBox_box.style.marginBottom = '2px';
+
+            exBox_box.onmouseover = function (event) {
+                this.style.backgroundColor = getRandomColor();
+            }
+
+            exBox_container.appendChild(exBox_box);
+        }
+
+		/** Exericício 2 */
+		/*
+		*/
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+		/** Exericício 3 */
+		/*
+        */
+        var names = ["Diego", "Gabriel", "Lucas"];
+
+        function renderList () {
+            var exList_list = document.querySelector('#exList ul#list');
+            exList_list.innerHTML = '';
+            
+            for (let i = 0; i < names.length; i++) {
+                const name = names[i];
+                
+                var exList_item = document.createElement('li');
+                exList_item.appendChild(document.createTextNode(name));
+                
+                exList_list.appendChild(exList_item);
+            }
+        }
+
+        renderList();
+
+		/** Exericício 4 */
+		/*
+        */
+        var exList_name = document.querySelector('#exList input[name=name]');
+        
+        function add () {
+            if (exList_name.value.length === 0) 
+                return;
+
+            names.push(exList_name.value);
+
+            renderList();
+
+            exList_name.value = '';
+        }
+    </script>
+</body>
+</html>
